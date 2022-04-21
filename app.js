@@ -1,15 +1,34 @@
-const profileDataArgs = process.argv.slice(2, process.argv.length);
-console.log(profileDataArgs);
-// const generatePage = (userName, githubName) => `Name: ${userName}, Github: ${githubName}`;
-const generatePage = (userName, githubName) => {
-    return `
-    Name: ${userName}
-    Github: ${githubName}
-    `;
-};
-console.log(generatePage(profileDataArgs[0], profileDataArgs[1]));
+// const profileDataArgs = process.argv.slice(2, process.argv.length);
+// console.log(profileDataArgs);
+// // const generatePage = (userName, githubName) => `Name: ${userName}, Github: ${githubName}`;
+// const generatePage = (userName, githubName) => {
+//     return `
+//     Name: ${userName}
+//     Github: ${githubName}
+//     `;
+// };
+// console.log(generatePage(profileDataArgs[0], profileDataArgs[1]));
 
 
+
+var inquirer = require('inquirer');
+inquirer
+  .prompt([
+    /* Pass your questions in here */
+    {
+        type:"input",
+        name:'firstName', 
+        message:'What is your first name?',
+    }
+  ])
+  .then((answers) => {
+      console.log(answers);
+    // Use user feedback for... whatever!!
+  })
+  .catch((error) => {
+      console.error(error);
+
+  });
 
 
 
